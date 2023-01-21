@@ -1,0 +1,254 @@
+*,
+*::before, 
+*::after{
+    margin:0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+}
+:root {
+    /* ##  Primary Colors */
+    --Dark-Blue: hsl(240, 38%, 20%);
+    --Grayish-Blue: hsl(240, 18%, 77%);
+}
+html{
+    font-size: 100%;
+}
+img{
+    max-width: 100%;
+    max-height: 100%;
+}
+body{
+    width: 100%;
+    min-height: 100vh;
+    font-size: 2rem ;
+    font-family: 'Inter', sans-serif;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    background-image: url(../images/pattern-curve.svg);
+    background-repeat: no-repeat;
+    background-size: 38.125rem  9.625rem;
+    background-position: left bottom 0;
+    padding: 0 2rem;
+}
+
+/* Hide the element visually but still accessible by the screen reader */
+.sr-only {
+    position: absolute !important;
+    margin: -1px !important;
+    -webkit-clip-path: inset(50%) !important;
+        clip-path: inset(50%) !important;
+    border: 0 !important;
+    padding: 0 !important;
+    width: 1px !important;
+    height: 1px !important;
+    overflow: hidden !important;
+    white-space: nowrap !important;
+}
+main{
+    max-width:75rem;
+    position: relative;
+}
+.testimonial{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;  
+}
+.active-testimonial{
+    display: none;
+}
+/* start styling the blockquote__div */
+.blockquote__div{
+    background-image: url(../images/pattern-quotes.svg);
+    background-repeat: no-repeat;
+    background-size: 6.25rem;
+    background-position: top 5rem left 9rem;
+    flex-basis: 57%;
+    padding: 8rem 0 5rem 3rem;
+}
+.blockquote__div .blockquote{
+    position: relative;
+    z-index: 10;
+    color: var(--Dark-Blue);
+    line-height: 1.4;
+    font-weight: 300;
+    text-align: left;
+    font-size: 1.9rem;
+}
+.blockquote__div .name{
+    font-size: 1.25rem ;
+    margin-top: 3rem;
+    font-weight: 700;
+    color: var(--Dark-Blue);
+}
+.blockquote__div .name .occupation{
+    color: var(--Grayish-Blue);
+    font-weight: 500;
+}
+/* start styling the image part */
+.image {
+    position: relative;
+    min-width:41.25rem;
+    border-radius: 0.625rem;
+    margin-left: -8.91rem;
+    padding: 4.5rem;
+    background-image: url(../images/pattern-bg.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+   /* animation: translating 4s linear infinite;*/
+} 
+/* animation for the image */
+/*
+@keyframes translating {
+    0%{
+        -webkit-transform: translateY(0) scale(1) rotate(0);
+        transform:translateY(0) scale(1) rotate(0);
+    }
+    50%{
+        -webkit-transform:  translateY(1rem) scale(1.08) rotate(5deg);
+        transform:  translateY(1rem) scale(1.08) rotate(5deg);
+    }
+    100%{
+        -webkit-transform: translateY(0) scale(1.05) rotate(0);
+        transform:translateY(0) scale(1) rotate(0);
+    }
+}*/
+.image>img {
+    display: block;
+    border-radius: 0.625rem;
+}
+/* start styling the buttons */
+.buttons{
+    position: absolute;
+    bottom: 4.5rem;
+    right: 23.75rem;
+    transform: translate(-50%, 50%);
+    background: #fff;
+    border-radius: 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;   
+    overflow: hidden;
+    box-shadow: 0.188rem 1.625rem 3.5rem -0.313rem rgba(53,55,100,0.67);
+    -webkit-box-shadow: 0.188rem 1.625rem 3.5rem -0.313rem rgba(53,55,100,0.67);
+    -moz-box-shadow: 0.188rem 1.625rem 3.5rem -0.313rem rgba(53,55,100,0.67); 
+}
+.buttons .btn{
+    padding:  0.4rem 1rem ;
+    border: none;
+    outline: none;
+    background: #fff;
+    -webkit-transition: background-color .3s ease ; 
+    transition: background-color .3s ease ;                 
+}
+.buttons .btn img{
+    max-width: 100%;
+}
+.buttons .btn:hover,
+.buttons .btn:focus-visible {
+    background-color: #f3f3fb;
+}
+.buttons .btn:active,.buttons .btn:focus-visible {
+    color: #971357; 
+    outline: 0.1em dotted #d3629d;
+}
+/* start styling the attribution  */
+.attribution { 
+    margin-bottom: 0;
+    font-size: 0.813rem; 
+    text-align: center; 
+    color: var(--Dark-Blue); 
+}
+.attribution a {    
+    -webkit-transition: background-color .3s ease ; 
+    transition: background-color .3s ease ;       
+    color: #d3629d; 
+}
+.attribution a:hover{
+    color: #8467d3;
+}
+a:focus-visible{
+    text-decoration: none;
+    outline: 0.3rem dotted #5849d9;
+}
+/* media query for screens less than 66rem */
+@media screen and (max-width:66rem){
+    main{
+        padding: 3rem 1.5rem 0;
+        width: 100%;
+    }
+    .testimonial {
+        width:100%;
+        flex-direction: column-reverse;
+        flex-wrap: wrap;
+    }
+    .blockquote__div{
+        background-size: 5rem;
+        background-position: top 3rem center ;
+        flex-basis:100%;
+        max-width: 33.75rem;
+        margin-top: 2rem;
+        padding: 5rem 0;
+    }
+    .blockquote__div .blockquote{
+        text-align: center;
+        font-size:1.7rem;
+        padding: 0;
+    }
+    .blockquote__div .name{
+        font-size: 0.938rem;
+        text-align: center;
+    }
+    .image{
+        min-width: auto;
+        flex-basis: 100%;
+        max-width: 340px;
+        margin-left: 0;
+        padding: 2.25rem;
+    }
+    .buttons{
+        bottom: auto;
+        top: 19rem;
+        right:50%;
+        transform: translate(50%, 50%);
+        padding: 0;
+    }
+    .buttons .btn{
+        padding:  0.3rem 1rem;
+    }
+}
+/* for screens less than 31.25rem */
+@media screen and (max-width:31.25rem ){
+    main{
+        padding: 3rem 0;
+    }
+    .blockquote__div .blockquote{
+        font-size:1.3rem;
+    }
+    .blockquote__div .occupation{
+        display: block;
+        margin-top: 0.3rem;
+    }
+    .image{
+        min-width: 20rem;
+        max-width: auto;
+    }
+    .buttons{
+        top: 18rem
+    }
+    .attribution{
+        display: none;
+    }
+}
